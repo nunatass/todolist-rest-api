@@ -9,6 +9,10 @@ exports.up = function (knex) {
         table.timestamp('update_at').defaultTo(knex.fn.now()).notNullable();
 
         table.timestamp('completed_at');
+
+        table.uuid('user_id').notNullable();
+
+        table.foreign('user_id').references('id').inTable('user');
     });
 };
 

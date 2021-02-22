@@ -6,6 +6,23 @@ const TodoListController = require('./controllers/TodoListController');
 
 const TaskController = require('./controllers/TaskController');
 
+const UserController = require('./controllers/UserController');
+
+//user
+routes.post('/user', UserController.create);
+
+routes.get('/user/all', UserController.index);
+
+routes.get('/user/:id', UserController.getUserById);
+
+routes.get('/user', UserController.getUserByEmail);
+
+routes.delete('/user/:id', UserController.deleteUserById);
+
+routes.delete('/user', UserController.deleteUserByEmail);
+
+routes.put('/user', UserController.updatePassword);
+
 // todo
 routes.get('/todolist', TodoListController.index);
 

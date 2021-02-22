@@ -16,7 +16,7 @@ exports.up = function (knex) {
 
         table.integer('list_id').notNullable();
 
-        table.foreign('list_id').references('id').inTable('list_id');
+        table.foreign('list_id').references('id').inTable('todo_list');
     });
 };
 
